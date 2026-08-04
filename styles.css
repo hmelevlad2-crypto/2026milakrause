@@ -90,7 +90,7 @@ body {
 .container { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
 
 /* ============================================
-   HEADER (светлая тема) — белая шапка для читаемости
+   HEADER (светлая тема) — белая шапка
    ============================================ */
 .header {
     position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
@@ -107,7 +107,6 @@ body {
 
 .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
 
-/* Logo — бирюзовый градиент */
 .logo {
     display: flex; align-items: center; gap: 12px;
     font-family: 'Montserrat', sans-serif;
@@ -157,7 +156,6 @@ body {
     color: var(--teal-800);
 }
 
-/* Theme toggle */
 .theme-toggle {
     display: flex; align-items: center; justify-content: center;
     width: 34px; height: 34px; border-radius: 50%;
@@ -172,7 +170,6 @@ body {
 body.dark-theme .theme-toggle .sun-icon { opacity: 0; transform: scale(0.5); }
 body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
 
-/* Language dropdown */
 .lang-dropdown { position: relative; }
 .lang-switch {
     display: flex; align-items: center; gap: 5px;
@@ -238,10 +235,12 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
 
 .hero-badge {
     display: inline-flex; align-items: center; gap: 8px;
-    padding: 8px 18px; background: rgba(20,184,166,0.1);
-    border: 1px solid rgba(20,184,166,0.2); border-radius: var(--r-full);
+    padding: 8px 18px; background: rgba(255,255,255,0.7);
+    border: 1px solid var(--teal-200);
+    border-radius: var(--r-full);
     font-size: 0.8rem; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 0.08em; color: var(--teal-700); margin-bottom: 22px;
+    letter-spacing: 0.08em; color: var(--teal-700);
+    margin-bottom: 22px;
     backdrop-filter: blur(8px);
 }
 .hero-title {
@@ -249,7 +248,10 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
     font-weight: 800; line-height: 1.1; color: var(--slate-900);
     margin-bottom: 22px; letter-spacing: -0.03em;
 }
-.hero-text { font-size: 1.05rem; color: var(--slate-500); line-height: 1.75; margin-bottom: 28px; max-width: 580px; font-weight: 400; }
+.hero-text {
+    font-size: 1.05rem; color: var(--slate-700);
+    line-height: 1.75; margin-bottom: 28px; max-width: 580px; font-weight: 400;
+}
 
 .hero-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
 
@@ -257,7 +259,7 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
     display: inline-flex; align-items: center; gap: 6px;
     padding: 8px 14px; background: var(--bg-surface);
     border: 1px solid var(--slate-200); border-radius: var(--r-full);
-    font-size: 0.85rem; font-weight: 600; color: var(--slate-600);
+    font-size: 0.85rem; font-weight: 600; color: var(--slate-700);
     box-shadow: var(--shadow-xs); transition: var(--t);
 }
 .badge:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); }
@@ -275,7 +277,6 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
 .badge-gold svg { color: var(--gold); }
 .badge-gold:hover { border-color: var(--gold); box-shadow: var(--shadow-gold); }
 
-/* Buttons */
 .btn {
     display: inline-flex; align-items: center; justify-content: center;
     padding: 14px 30px; font-family: 'Montserrat', sans-serif;
@@ -306,31 +307,33 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
 }
 
 /* ============================================
-   SECTIONS COMMON (светлая тема — белый текст на бирюзовом)
+   SECTIONS COMMON — ТЕПЕРЬ ТЕКСТ ТЁМНЫЙ
    ============================================ */
 .section-header { text-align: center; max-width: 640px; margin: 0 auto 56px; }
 .section-label {
     display: inline-block; font-size: 0.7rem; font-weight: 800;
     text-transform: uppercase; letter-spacing: 0.12em;
-    color: #ffffff;
+    color: var(--teal-700);
     margin-bottom: 14px; padding: 5px 12px;
-    background: rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.8);
     border-radius: var(--r-full);
-    border: 1px solid rgba(255,255,255,0.25);
+    border: 1px solid var(--teal-200);
 }
 .section-title {
     font-family: 'Montserrat', sans-serif; font-size: clamp(1.6rem, 3.5vw, 2.3rem);
-    font-weight: 800; color: #ffffff;
+    font-weight: 800;
+    color: var(--slate-900);
     margin-bottom: 16px;
     letter-spacing: -0.03em; line-height: 1.15;
 }
 .section-subtitle {
-    font-size: 0.95rem; color: rgba(255,255,255,0.8);
+    font-size: 0.95rem;
+    color: var(--slate-700);
     line-height: 1.65; font-weight: 400;
 }
 
 /* ============================================
-   SERVICES — фон прозрачный, карточки белые
+   SERVICES
    ============================================ */
 .services { padding: 100px 0; position: relative; overflow: hidden; background: transparent; }
 .services-blob {
@@ -375,10 +378,10 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
 .service-icon-teal { background: var(--gradient-teal); box-shadow: var(--shadow-glow-sm); }
 
 .service-card h3 { font-family: 'Montserrat', sans-serif; font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; color: var(--slate-900); }
-.service-card p { font-size: 0.85rem; color: var(--slate-500); line-height: 1.6; font-weight: 400; }
+.service-card p { font-size: 0.85rem; color: var(--slate-600); line-height: 1.6; font-weight: 400; }
 
 /* ============================================
-   ABOUT — фон прозрачный, контент белый блок
+   ABOUT
    ============================================ */
 .about { padding: 100px 0; position: relative; overflow: hidden; background: transparent; }
 .about-blob {
@@ -430,7 +433,7 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
     background: var(--teal-50);
     border-color: var(--teal-100);
 }
-.about-content p { font-size: 0.95rem; color: var(--slate-500); line-height: 1.75; margin-bottom: 14px; font-weight: 400; }
+.about-content p { font-size: 0.95rem; color: var(--slate-600); line-height: 1.75; margin-bottom: 14px; font-weight: 400; }
 .about-content blockquote {
     font-family: 'Montserrat', sans-serif; font-size: 1.05rem; font-weight: 600; font-style: italic;
     color: var(--teal-700); padding: 24px 28px; background: var(--teal-50);
@@ -451,7 +454,7 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
     background: var(--gradient-teal); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     margin-bottom: 4px; line-height: 1.2;
 }
-.stat-label { font-size: 0.72rem; color: var(--slate-500); line-height: 1.4; font-weight: 500; }
+.stat-label { font-size: 0.72rem; color: var(--slate-600); line-height: 1.4; font-weight: 500; }
 
 .stat-coral:hover { border-color: var(--coral-light); }
 .stat-coral .stat-number { background: var(--gradient-coral); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
@@ -466,7 +469,7 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
 .stat-blue .stat-number { background: var(--gradient-blue); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 
 /* ============================================
-   GALLERY — фон прозрачный, табы на бирюзовом
+   GALLERY
    ============================================ */
 .gallery { padding: 100px 0; position: relative; overflow: hidden; background: transparent; }
 .gallery-blob {
@@ -498,7 +501,6 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
 .gallery-item:hover .gallery-placeholder { opacity: 0.3; }
 .gallery-placeholder span { font-size: 0.72rem; font-weight: 600; }
 
-/* Табы — полупрозрачные на бирюзовом */
 .gallery-tabs-wrap {
     display: flex;
     justify-content: center;
@@ -507,10 +509,10 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
 .gallery-tabs {
     display: flex;
     gap: 8px;
-    background: rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.5);
     padding: 6px;
     border-radius: var(--r-full);
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid var(--teal-200);
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -521,24 +523,24 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
     font-family: 'Montserrat', sans-serif;
     font-size: 0.85rem;
     font-weight: 700;
-    color: rgba(255,255,255,0.7);
+    color: var(--slate-600);
     background: transparent;
     cursor: pointer;
     transition: var(--t);
     white-space: nowrap;
 }
 .gallery-tab:hover {
-    background: rgba(255,255,255,0.2);
-    color: #ffffff;
+    background: rgba(255,255,255,0.7);
+    color: var(--slate-900);
 }
 .gallery-tab.active {
-    background: rgba(255,255,255,0.3);
-    color: #ffffff;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    background: var(--bg-surface);
+    color: var(--teal-700);
+    box-shadow: 0 2px 12px rgba(13,148,136,0.15);
 }
 
 /* ============================================
-   CONTACT — фон прозрачный, блоки белые
+   CONTACT
    ============================================ */
 .contact { padding: 100px 0; position: relative; overflow: hidden; background: transparent; }
 .contact-blob {
@@ -558,7 +560,7 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
     font-family: 'Montserrat', sans-serif; font-size: 1.15rem; font-weight: 700;
     margin-bottom: 12px; color: var(--slate-900);
 }
-.contact-info > p, .contact-form-wrap > p { font-size: 0.95rem; color: var(--slate-500); margin-bottom: 28px; line-height: 1.65; font-weight: 400; }
+.contact-info > p, .contact-form-wrap > p { font-size: 0.95rem; color: var(--slate-600); margin-bottom: 28px; line-height: 1.65; font-weight: 400; }
 
 .contact-links { display: flex; flex-direction: column; gap: 12px; }
 .contact-link {
@@ -599,7 +601,7 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
 .contact-note svg { flex-shrink: 0; color: var(--teal-500); margin-top: 2px; }
 
 /* ============================================
-   FOOTER — оставляем бирюзовым
+   FOOTER
    ============================================ */
 .footer {
     padding: 32px 0; background: var(--gradient-footer); color: var(--teal-100);
@@ -626,7 +628,7 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
 }
 
 /* ============================================
-   ТЁМНАЯ ТЕМА — полное переопределение
+   ТЁМНАЯ ТЕМА — текст остаётся белым
    ============================================ */
 body.dark-theme {
     background: #3C3C3C;
@@ -1017,7 +1019,6 @@ body.dark-theme .moreworks-empty svg {
     }
 }
 
-/* Анимация переключения галереи */
 .gallery-grid, .moreworks-grid {
     transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1), transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -1026,7 +1027,6 @@ body.dark-theme .moreworks-empty svg {
     transform: translateY(12px);
 }
 
-/* Динамические изображения */
 .gallery-item img {
     width: 100%;
     height: 100%;
