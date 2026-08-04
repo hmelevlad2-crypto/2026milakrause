@@ -209,14 +209,13 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
 .menu-toggle span { display: block; width: 22px; height: 2.5px; background: var(--slate-700); border-radius: 2px; transition: var(--t); }
 
 /* ============================================
-   HERO — теперь прозрачный, использует общий фон
+   HERO — прозрачный, использует общий фон
    ============================================ */
 .hero {
     position: relative; padding: 140px 0 100px; overflow: hidden;
-    background: transparent;  /* убрали градиент */
+    background: transparent;
     min-height: 100vh; display: flex; align-items: center;
 }
-/* декоративные элементы оставляем, но они будут поверх фона */
 .hero-gradient {
     position: absolute; top: -20%; right: -10%; width: 700px; height: 700px;
     background: radial-gradient(circle, rgba(20,184,166,0.15) 0%, transparent 65%);
