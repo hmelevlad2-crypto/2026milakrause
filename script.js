@@ -11,6 +11,7 @@ const translations = {
         nav_about: 'Обо мне',
         nav_services: 'Услуги',
         nav_gallery: 'Галерея',
+        nav_reviews: 'Отзывы',
         nav_contact: 'Контакты',
         btn_contact: 'Связаться',
         hero_badge: 'Художник-педагог с 20-летним стажем',
@@ -64,6 +65,9 @@ const translations = {
         work_4: 'Работа 4',
         work_5: 'Работа 5',
         work_6: 'Работа 6',
+        reviews_label: 'Отзывы',
+        reviews_title: 'Что говорят ученики и родители',
+        reviews_subtitle: 'Реальные отзывы от наших учеников и их родителей',
         contact_label: 'Контакты',
         contact_title: 'Свяжитесь со мной',
         contact_subtitle: 'Запишитесь на пробное занятие, задайте вопрос или узнайте больше об услугах',
@@ -86,6 +90,7 @@ const translations = {
         nav_about: 'Über mich',
         nav_services: 'Leistungen',
         nav_gallery: 'Galerie',
+        nav_reviews: 'Bewertungen',
         nav_contact: 'Kontakt',
         btn_contact: 'Kontakt',
         hero_badge: 'Kunstpädagogin mit 20 Jahren Erfahrung',
@@ -139,6 +144,9 @@ const translations = {
         work_4: 'Werk 4',
         work_5: 'Werk 5',
         work_6: 'Werk 6',
+        reviews_label: 'Bewertungen',
+        reviews_title: 'Was Schüler und Eltern sagen',
+        reviews_subtitle: 'Echte Bewertungen von unseren Schülern und ihren Eltern',
         contact_label: 'Kontakt',
         contact_title: 'Kontaktieren Sie mich',
         contact_subtitle: 'Vereinbaren Sie eine Probestunde, stellen Sie eine Frage oder erfahren Sie mehr über meine Leistungen',
@@ -193,6 +201,20 @@ const STATIC_FILES = {
 };
 
 const STATIC_ABOUT_PHOTO = 'images/main.jpg';
+
+// Отзывы на русском и немецком
+const REVIEWS_DATA = {
+    ru: [
+        'Ich bin sehr dankbar, dass ich die Gelegenheit hatte, Sie kennenzulernen und an Ihrem Kurs teilzunehmen. Für mich ist das von unschätzbarem Wert. Sie sind nicht nur eine hervorragende Expertin, sondern auch ein wunderbarer Mensch. Die Kommunikation mit Ihnen ist angenehm und inspirierend, und Ihre professionelle Begleitung während des gesamten Neurographik-Kurses gibt Sicherheit, Motivation und Unterstützung auf dem Weg der persönlichen Entwicklung. Dank Ihrer Aufmerksamkeit, Ihres Wissens und Ihres Engagements wird dieser Transformationsprozess zu einer wertvollen und bereichernden Erfahrung. Ich danke Ihnen von Herzen für Ihre Arbeit, Ihre Inspiration und Ihre Unterstützung.',
+        'Ich möchte unserer wunderbaren Kunstlehrerin von Herzen danken. Meine Tochter besucht den Unterricht mit großer Freude und freut sich jedes Mal auf die nächste Stunde. Besonders schätze ich die professionelle, geduldige und herzliche Art, mit der sie die Kinder begleitet. Sie schafft es, meine Tochter zu motivieren, ihr Selbstvertrauen zu stärken und ihr kreatives Potenzial zu entfalten. Dabei lernt sie nicht nur verschiedene Maltechniken, sondern entwickelt auch ihre Fantasie und Ausdruckskraft. Die warme und freundliche Atmosphäre im Unterricht sorgt dafür, dass sich die Kinder jederzeit wohlfühlen. Vielen Dank für Ihr großes Engagement, Ihre Geduld und Ihre Leidenschaft. Wir können den Malunterricht bei Ludmilla von ganzem Herzen weiterempfehlen.',
+        'Mein Sohn hat bei Ludmilla privaten Malunterricht erhalten. Er hat sich dort jederzeit wohl, sicher und bestens aufgehoben gefühlt. Der Unterricht hat ihm viel Freude bereitet und ihm ermöglicht, seine kreativen Fähigkeiten weiterzuentwickeln. Besonders geschätzt haben wir, dass Ludmilla individuell auf jedes Kind eingeht, seine Stärken erkennt und gezielt fördert. Mein Sohn ist immer mit großer Begeisterung zum Malunterricht gegangen. Wir können Ludmilla von Herzen weiterempfehlen.'
+    ],
+    de: [
+        'Ich bin sehr dankbar, dass ich die Gelegenheit hatte, Sie kennenzulernen und an Ihrem Kurs teilzunehmen. Für mich ist das von unschätzbarem Wert. Sie sind nicht nur eine hervorragende Expertin, sondern auch ein wunderbarer Mensch. Die Kommunikation mit Ihnen ist angenehm und inspirierend, und Ihre professionelle Begleitung während des gesamten Neurographik-Kurses gibt Sicherheit, Motivation und Unterstützung auf dem Weg der persönlichen Entwicklung. Dank Ihrer Aufmerksamkeit, Ihres Wissens und Ihres Engagements wird dieser Transformationsprozess zu einer wertvollen und bereichernden Erfahrung. Ich danke Ihnen von Herzen für Ihre Arbeit, Ihre Inspiration und Ihre Unterstützung.',
+        'Ich möchte unserer wunderbaren Kunstlehrerin von Herzen danken. Meine Tochter besucht den Unterricht mit großer Freude und freut sich jedes Mal auf die nächste Stunde. Besonders schätze ich die professionelle, geduldige und herzliche Art, mit der sie die Kinder begleitet. Sie schafft es, meine Tochter zu motivieren, ihr Selbstvertrauen zu stärken und ihr kreatives Potenzial zu entfalten. Dabei lernt sie nicht nur verschiedene Maltechniken, sondern entwickelt auch ihre Fantasie und Ausdruckskraft. Die warme und freundliche Atmosphäre im Unterricht sorgt dafür, dass sich die Kinder jederzeit wohlfühlen. Vielen Dank für Ihr großes Engagement, Ihre Geduld und Ihre Leidenschaft. Wir können den Malunterricht bei Ludmilla von ganzem Herzen weiterempfehlen.',
+        'Mein Sohn hat bei Ludmilla privaten Malunterricht erhalten. Er hat sich dort jederzeit wohl, sicher und bestens aufgehoben gefühlt. Der Unterricht hat ihm viel Freude bereitet und ihm ermöglicht, seine kreativen Fähigkeiten weiterzuentwickeln. Besonders geschätzt haben wir, dass Ludmilla individuell auf jedes Kind eingeht, seine Stärken erkennt und gezielt fördert. Mein Sohn ist immer mit großer Begeisterung zum Malunterricht gegangen. Wir können Ludmilla von Herzen weiterempfehlen.'
+    ]
+};
 
 function openDB() {
     return new Promise((resolve, reject) => {
@@ -277,6 +299,46 @@ function fileToBase64(file) {
     });
 }
 
+// ============================================
+// RENDER REVIEWS
+// ============================================
+function renderReviews() {
+    const grid = document.getElementById('reviewsGrid');
+    if (!grid) return;
+    
+    const lang = currentLang;
+    const reviews = REVIEWS_DATA[lang] || REVIEWS_DATA.ru;
+    
+    grid.innerHTML = '';
+    
+    reviews.forEach((text, index) => {
+        const card = document.createElement('div');
+        card.className = 'review-card';
+        card.innerHTML = `
+            <div class="review-icon">"</div>
+            <div class="review-text">${text}</div>
+            <div class="review-author">— ${lang === 'ru' ? 'Ученик' : 'Schüler'} ${index + 1}</div>
+        `;
+        grid.appendChild(card);
+    });
+}
+
+// ============================================
+// VIDEO THEME SWITCH
+// ============================================
+function updateVideoSource() {
+    const video = document.getElementById('aboutVideo');
+    const source = document.getElementById('videoSource');
+    if (!video || !source) return;
+    
+    const isDark = document.body.classList.contains('dark-theme');
+    source.src = isDark ? 'images/movie2.mp4' : 'images/movie1.mp4';
+    video.load();
+}
+
+// ============================================
+// Render Gallery (главная)
+// ============================================
 async function renderGallery() {
     const grid = document.getElementById('galleryGrid');
     const tabsWrap = document.getElementById('galleryTabsWrap');
@@ -442,6 +504,9 @@ async function renderGalleryItems() {
     });
 }
 
+// ============================================
+// Render About Photo (с fallback на main.jpg)
+// ============================================
 async function renderAboutPhoto() {
     const frame = document.getElementById('aboutFrame');
     if (!frame) return;
@@ -505,6 +570,9 @@ async function renderAboutPhoto() {
     frame.appendChild(img);
 }
 
+// ============================================
+// Render More Works
+// ============================================
 async function renderMoreWorks() {
     const grid = document.getElementById('moreworksGrid');
     const empty = document.getElementById('moreworksEmpty');
@@ -672,6 +740,8 @@ function setLanguage(lang, animate = true) {
             } else {
                 renderGallery();
                 renderAboutPhoto();
+                renderReviews();
+                updateVideoSource();
             }
             document.body.style.opacity = '1';
         }, 200);
@@ -682,6 +752,8 @@ function setLanguage(lang, animate = true) {
         } else {
             renderGallery();
             renderAboutPhoto();
+            renderReviews();
+            updateVideoSource();
         }
     }
 }
@@ -704,11 +776,13 @@ function toggleTheme() {
     document.body.classList.toggle('dark-theme');
     const isDark = document.body.classList.contains('dark-theme');
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    updateVideoSource();
 }
 
 function initTheme() {
     const saved = localStorage.getItem('theme');
     if (saved === 'dark') document.body.classList.add('dark-theme');
+    updateVideoSource();
 }
 
 function copyEmail(e) {
@@ -737,6 +811,9 @@ function copyEmail(e) {
     });
 }
 
+// ============================================
+// DOM Ready
+// ============================================
 document.addEventListener('DOMContentLoaded', async function() {
     try {
         let views = parseInt(localStorage.getItem('mila_page_views') || '0');
@@ -751,6 +828,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     } else {
         await renderGallery();
         await renderAboutPhoto();
+        renderReviews();
     }
 
     const savedLang = localStorage.getItem('lang');
