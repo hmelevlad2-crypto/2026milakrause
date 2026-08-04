@@ -6,79 +6,79 @@
 
 const translations = {
     ru: {
-    logo: 'Мила Краузе',
-    title: 'Людмила Краусе — Художник, преподаватель, арт-терапевт',
-    nav_about: 'Обо мне',
-    nav_services: 'Услуги',
-    nav_gallery: 'Галерея',
-    nav_contact: 'Контакты',
-    btn_contact: 'Связаться',
-    hero_badge: 'Художник-педагог с 20-летним стажем',
-    hero_title: 'Раскрываю творческий потенциал ребенка и взрослого через персональный подход',
-    hero_text: 'Обучение живописи детей и взрослых, арт-терапия, Нейрографика, консультации по Квантовой Астрогенетике. Обучаю онлайн и офлайн в Ойскирхене, на русском и украинском языке, подходит для детей из русско-немецких семей.',
-    badge_1: 'Индивидуальный подход',
-    badge_2: 'Онлайн и офлайн',
-    badge_3: 'Для детей и взрослых',
-    btn_cta: 'Записаться на занятие',
-    services_label: 'Услуги',
-    services_title: 'Профессиональные компетенции и услуги',
-    services_subtitle: 'Персональное обучение живописи, терапевтические практики, персональные консультации под запрос через квантовые инструменты',
-    tag_kids: '5–15 лет',
-    tag_teens: 'от 10 лет',
-    tag_all: 'для всех',
-    tag_online: 'онлайн',
-    tag_consult: 'консультация',
-    tag_individual: 'индивидуально',
-    service_1_title: 'Рисование для детей',
-    service_1_desc: 'Занятия для детей от 5 до 15 лет. Карандаш, акварель, акрил и развитие творческого мышления.',
-    service_2_title: 'Масляная живопись',
-    service_2_desc: 'Серьезные занятия для подростков и взрослых с углублением в технику масляной живописи. Раскрытие секретов и тонкостей создания полотен.',
-    service_3_title: 'Арт-терапия',
-    service_3_desc: 'Снятие стресса и эмоциональная гармонизация через творчество. Для детей и взрослых.',
-    service_4_title: 'Нейрографика онлайн',
-    service_4_desc: 'Практика, которая помогает проработать запросы и найти решения через рисунок. Доступно дистанционно.',
-    service_5_title: 'Квантовая Астрогенетика',
-    service_5_desc: 'Раскрытие планетарного потенциала ребенка и взрослого по дате рождения. Рекомендации по направлениям дальнейшего обучения и корректировке возможных психологических состояний.',
-    service_6_title: 'Световые карты',
-    service_6_desc: 'Квантовый инструмент работы с тонким планом через персональные световые метафорические расклады «Неопределенность событий возможно сделать определенными».',
-    about_label: 'Обо мне',
-    about_title: 'Творчество как путь к себе',
-    about_p1: 'Верю, что каждый ребёнок талантлив по-своему, и моя задача — помочь этот талант раскрыть. Обучаю различным техникам живописи. К каждому ученику — индивидуальный подход. Учу детей рисовать карандашом, акрилом, маслом на холсте, развиваю творческое мышление и уверенность в себе.',
-    about_p2: 'Помимо изобразительного искусства, я провожу арт-терапевтические занятия и нейрографику для детей и взрослых, помогаю снять стресс через творчество. Для родителей раскрываю планетарный потенциал детей по дате рождения.',
-    quote: '«Каждый ребёнок талантлив по-своему, и я готова помочь раскрыть его потенциал».',
-    float_years: 'лет опыта',
-    photo_placeholder: 'Фото художника',
-    stat_1: 'лет творческого опыта',
-    stat_2: 'лет — возраст учеников',
-    stat_3: 'направления искусства',
-    stat_4: 'языки консультаций',
-    gallery_label: 'Портфолио',
-    gallery_title: 'Галерея',
-    gallery_subtitle: 'Авторские работы и творчество учеников в различных техниках.',
-    gallery_tab_personal: 'Личная',
-    gallery_tab_students: 'Ученики',
-    gallery_tab_neuro: 'Нейрографика',
-    work_1: 'Работа 1',
-    work_2: 'Работа 2',
-    work_3: 'Работа 3',
-    work_4: 'Работа 4',
-    work_5: 'Работа 5',
-    work_6: 'Работа 6',
-    contact_label: 'Контакты',
-    contact_title: 'Свяжитесь со мной',
-    contact_subtitle: 'Запишитесь на пробное занятие, задайте вопрос или узнайте больше об услугах',
-    contact_info_title: 'Контакты',
-    contact_info_text: 'Пишите или звоните — отвечу в удобное для вас время.',
-    form_title: 'Записаться на занятие',
-    form_text: 'Напишите мне в Telegram или WhatsApp или на электронную почту, и мы договоримся о времени и формате.',
-    form_note: 'Занятия и консультации проходят в Ойскирхене, онлайн, возможны уроки на дому. Первое знакомство возможно онлайн в формате консультации, чтобы выбрать подходящий метод обучения или общения.',
-    footer_text: '© 2026 Людмила Краусе. Все права защищены.',
-    gallery_more: 'Больше работ',
-    moreworks_title: 'Все работы — Людмила Краусе',
-    moreworks_heading: 'Все работы',
-    moreworks_subtitle: 'Полная коллекция работ и ученических проектов',
-    moreworks_empty: 'Пока нет загруженных работ'
-},
+        logo: 'Мила Краузе',
+        title: 'Людмила Краусе — Художник, преподаватель, арт-терапевт',
+        nav_about: 'Обо мне',
+        nav_services: 'Услуги',
+        nav_gallery: 'Галерея',
+        nav_contact: 'Контакты',
+        btn_contact: 'Связаться',
+        hero_badge: 'Художник-педагог с 20-летним стажем',
+        hero_title: 'Раскрываю творческий потенциал ребенка и взрослого через персональный подход',
+        hero_text: 'Обучение живописи детей и взрослых, арт-терапия, Нейрографика, консультации по Квантовой Астрогенетике. Обучаю онлайн и офлайн в Ойскирхене, на русском и украинском языке, подходит для детей из русско-немецких семей.',
+        badge_1: 'Индивидуальный подход',
+        badge_2: 'Онлайн и офлайн',
+        badge_3: 'Для детей и взрослых',
+        btn_cta: 'Записаться на занятие',
+        services_label: 'Услуги',
+        services_title: 'Профессиональные компетенции и услуги',
+        services_subtitle: 'Персональное обучение живописи, терапевтические практики, персональные консультации под запрос через квантовые инструменты',
+        tag_kids: '5–15 лет',
+        tag_teens: 'от 10 лет',
+        tag_all: 'для всех',
+        tag_online: 'онлайн',
+        tag_consult: 'консультация',
+        tag_individual: 'индивидуально',
+        service_1_title: 'Рисование для детей',
+        service_1_desc: 'Занятия для детей от 5 до 15 лет. Карандаш, акварель, акрил и развитие творческого мышления.',
+        service_2_title: 'Масляная живопись',
+        service_2_desc: 'Серьезные занятия для подростков и взрослых с углублением в технику масляной живописи. Раскрытие секретов и тонкостей создания полотен.',
+        service_3_title: 'Арт-терапия',
+        service_3_desc: 'Снятие стресса и эмоциональная гармонизация через творчество. Для детей и взрослых.',
+        service_4_title: 'Нейрографика онлайн',
+        service_4_desc: 'Практика, которая помогает проработать запросы и найти решения через рисунок. Доступно дистанционно.',
+        service_5_title: 'Квантовая Астрогенетика',
+        service_5_desc: 'Раскрытие планетарного потенциала ребенка и взрослого по дате рождения. Рекомендации по направлениям дальнейшего обучения и корректировке возможных психологических состояний.',
+        service_6_title: 'Световые карты',
+        service_6_desc: 'Квантовый инструмент работы с тонким планом через персональные световые метафорические расклады «Неопределенность событий возможно сделать определенными».',
+        about_label: 'Обо мне',
+        about_title: 'Творчество как путь к себе',
+        about_p1: 'Верю, что каждый ребёнок талантлив по-своему, и моя задача — помочь этот талант раскрыть. Обучаю различным техникам живописи. К каждому ученику — индивидуальный подход. Учу детей рисовать карандашом, акрилом, маслом на холсте, развиваю творческое мышление и уверенность в себе.',
+        about_p2: 'Помимо изобразительного искусства, я провожу арт-терапевтические занятия и нейрографику для детей и взрослых, помогаю снять стресс через творчество. Для родителей раскрываю планетарный потенциал детей по дате рождения.',
+        quote: '«Каждый ребёнок талантлив по-своему, и я готова помочь раскрыть его потенциал».',
+        float_years: 'лет опыта',
+        photo_placeholder: 'Фото художника',
+        stat_1: 'лет творческого опыта',
+        stat_2: 'лет — возраст учеников',
+        stat_3: 'направления искусства',
+        stat_4: 'языки консультаций',
+        gallery_label: 'Портфолио',
+        gallery_title: 'Галерея',
+        gallery_subtitle: 'Авторские работы и творчество учеников в различных техниках.',
+        gallery_tab_personal: 'Личная',
+        gallery_tab_students: 'Ученики',
+        gallery_tab_neuro: 'Нейрографика',
+        work_1: 'Работа 1',
+        work_2: 'Работа 2',
+        work_3: 'Работа 3',
+        work_4: 'Работа 4',
+        work_5: 'Работа 5',
+        work_6: 'Работа 6',
+        contact_label: 'Контакты',
+        contact_title: 'Свяжитесь со мной',
+        contact_subtitle: 'Запишитесь на пробное занятие, задайте вопрос или узнайте больше об услугах',
+        contact_info_title: 'Контакты',
+        contact_info_text: 'Пишите или звоните — отвечу в удобное для вас время.',
+        form_title: 'Записаться на занятие',
+        form_text: 'Напишите мне в Telegram или WhatsApp или на электронную почту, и мы договоримся о времени и формате.',
+        form_note: 'Занятия и консультации проходят в Ойскирхене, онлайн, возможны уроки на дому. Первое знакомство возможно онлайн в формате консультации, чтобы выбрать подходящий метод обучения или общения.',
+        footer_text: '© 2026 Людмила Краусе. Все права защищены.',
+        gallery_more: 'Больше работ',
+        moreworks_title: 'Все работы — Людмила Краусе',
+        moreworks_heading: 'Все работы',
+        moreworks_subtitle: 'Полная коллекция работ и ученических проектов',
+        moreworks_empty: 'Пока нет загруженных работ'
+    },
 
     de: {
         logo: 'Mila Krause',
@@ -88,16 +88,16 @@ const translations = {
         nav_gallery: 'Galerie',
         nav_contact: 'Kontakt',
         btn_contact: 'Kontakt',
-        hero_badge: 'Künstlerin mit 20 Jahren Erfahrung',
-        hero_title: 'Ich entfalte das Talent jedes Kindes durch Kreativität',
-        hero_text: 'Kunstunterricht für Kinder, Kunsttherapie, Neurographik und Astro-Genetik-Beratung. Ich arbeite in Euskirchen und online mit russisch- und ukrainischsprachigen Familien in Deutschland und im Ausland.',
+        hero_badge: 'Kunstpädagogin mit 20 Jahren Erfahrung',
+        hero_title: 'Entfalte das kreative Potenzial von Kindern und Erwachsenen durch einen persönlichen Ansatz',
+        hero_text: 'Unterricht in Malerei für Kinder und Erwachsene, Kunsttherapie, Neurographik, Beratung in Quanten-Astrogenetik. Ich unterrichte online und offline in Euskirchen, auf Russisch und Ukrainisch, geeignet für Kinder aus russisch-deutschen Familien.',
         badge_1: 'Individueller Ansatz',
         badge_2: 'Online und Offline',
         badge_3: 'Für Kinder und Erwachsene',
         btn_cta: 'Termin vereinbaren',
         services_label: 'Leistungen',
-        services_title: 'Was ich anbiete',
-        services_subtitle: 'Zeichenunterricht, therapeutische Praktiken und Beratungen für Kinder und Erwachsene',
+        services_title: 'Berufliche Kompetenzen und Dienstleistungen',
+        services_subtitle: 'Persönlicher Malunterricht, therapeutische Praktiken, persönliche Beratung auf Anfrage mit Quanteninstrumenten',
         tag_kids: '5–15 Jahre',
         tag_teens: 'ab 10 Jahren',
         tag_all: 'für alle',
@@ -107,19 +107,19 @@ const translations = {
         service_1_title: 'Zeichnen für Kinder',
         service_1_desc: 'Unterricht für Kinder von 5 bis 15 Jahren. Bleistift, Aquarell, Acryl und Entwicklung des kreativen Denkens.',
         service_2_title: 'Ölmalerei',
-        service_2_desc: 'Intensiver Unterricht für Jugendliche auf Leinwand mit Ölfarben. Technik, Farbe, Komposition.',
+        service_2_desc: 'Intensiver Unterricht für Jugendliche und Erwachsene mit Vertiefung in die Technik der Ölmalerei. Enthüllung der Geheimnisse und Feinheiten der Erstellung von Gemälden.',
         service_3_title: 'Kunsttherapie',
         service_3_desc: 'Stressabbau und emotionale Harmonisierung durch Kreativität. Für Kinder und Erwachsene.',
         service_4_title: 'Neurographik Online',
         service_4_desc: 'Eine Praxis, die hilft, Anliegen zu bearbeiten und Lösungen durch Zeichnen zu finden. Fern verfügbar.',
-        service_5_title: 'Astro-Genetik',
-        service_5_desc: 'Enthüllung des planetaren Potenzials eines Kindes anhand des Geburtsdatums. Verständnis von Stärken und Talenten.',
+        service_5_title: 'Quanten-Astrogenetik',
+        service_5_desc: 'Enthüllung des planetaren Potenzials von Kindern und Erwachsenen anhand des Geburtsdatums. Empfehlungen für weitere Bildungsrichtungen und Korrektur möglicher psychologischer Zustände.',
         service_6_title: 'Lichtkarten',
-        service_6_desc: 'Individuelle Lichtkarten zur Unterstützung von Harmonie, Absichten und innerem Gleichgewicht.',
+        service_6_desc: 'Quanteninstrument für die Arbeit mit der feinstofflichen Ebene durch persönliche Licht-Metaphern-Legungen. "Die Unbestimmtheit von Ereignissen kann bestimmbar gemacht werden."',
         about_label: 'Über mich',
         about_title: 'Kreativität als Weg zu sich selbst',
-        about_p1: 'Ich bin Künstlerin mit 20 Jahren Erfahrung. Ich glaube, dass jedes Kind auf seine Weise talentiert ist, und meine Aufgabe ist es, dieses Talent zu entfalten. Ich lehre Kinder, mit Bleistift, Acryl und Öl auf Leinwand zu malen, und entwickle kreatives Denken und Selbstvertrauen.',
-        about_p2: 'Neben der bildenden Kunst biete ich Kunsttherapie und Neurographik für Kinder und Erwachsene an, helfe beim Stressabbau durch Kreativität. Für Eltern enthülle ich das planetare Potenzial der Kinder anhand des Geburtsdatums.',
+        about_p1: 'Ich glaube, dass jedes Kind auf seine Weise talentiert ist, und meine Aufgabe ist es, dieses Talent zu entfalten. Ich unterrichte verschiedene Maltechniken mit einem individuellen Ansatz für jeden Schüler. Ich bringe Kindern bei, mit Bleistift, Acryl und Öl auf Leinwand zu malen, und entwickle kreatives Denken, künstlerische Fähigkeiten und Selbstvertrauen.',
+        about_p2: 'Neben der bildenden Kunst biete ich Kunsttherapie und Neurographik für Kinder und Erwachsene an, um Stress abzubauen und das innere Gleichgewicht durch Kreativität wiederherzustellen. Ich berate auch Eltern und enthülle das planetare Potenzial der Kinder anhand ihres Geburtsdatums.',
         quote: '"Jedes Kind ist auf seine Weise talentiert, und ich bin bereit, sein Potenzial zu entfalten."',
         float_years: 'Jahre Erfahrung',
         photo_placeholder: 'Foto der Künstlerin',
@@ -129,7 +129,7 @@ const translations = {
         stat_4: 'Beratungssprachen',
         gallery_label: 'Portfolio',
         gallery_title: 'Galerie',
-        gallery_subtitle: 'Ausschnitte aus Werken und Schülerprojekten in verschiedenen Techniken',
+        gallery_subtitle: 'Eigene Arbeiten und kreative Projekte von Schülern in verschiedenen Techniken.',
         gallery_tab_personal: 'Persönlich',
         gallery_tab_students: 'Schüler',
         gallery_tab_neuro: 'Neurographik',
@@ -145,8 +145,8 @@ const translations = {
         contact_info_title: 'Kontakt',
         contact_info_text: 'Schreiben oder rufen Sie an — ich antworte zu einer Zeit, die Ihnen passt.',
         form_title: 'Termin vereinbaren',
-        form_text: 'Schreiben Sie mir auf Telegram oder WhatsApp, und wir vereinbaren Zeit und Format.',
-        form_note: 'Der Unterricht findet in Euskirchen oder online statt. Das erste Kennenlernen kann als Beratung erfolgen, um das passende Format zu wählen.',
+        form_text: 'Schreiben Sie mir auf Telegram, WhatsApp oder per E-Mail, und wir vereinbaren eine passende Zeit und ein passendes Format.',
+        form_note: 'Unterricht und Beratungen finden in Euskirchen, online und auch zu Hause statt. Das erste Kennenlernen kann online als Beratung erfolgen, um die passende Lernmethode oder Kommunikationsform zu wählen.',
         footer_text: '© 2026 Ljudmila Krause. Alle Rechte vorbehalten.',
         gallery_more: 'Mehr Werke',
         moreworks_title: 'Alle Werke — Ljudmila Krause',
@@ -708,175 +708,3 @@ function setLanguage(lang, animate = true) {
             renderAboutPhoto();
         }
     }
-}
-
-function applyTranslations(t, lang) {
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (t[key]) el.textContent = t[key];
-    });
-    document.title = t.title;
-    document.documentElement.lang = lang;
-
-    const langCurrent = document.getElementById('langCurrent');
-    if (langCurrent) langCurrent.textContent = lang.toUpperCase();
-
-    localStorage.setItem('lang', lang);
-}
-
-function toggleTheme() {
-    document.body.classList.toggle('dark-theme');
-    const isDark = document.body.classList.contains('dark-theme');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-}
-
-function initTheme() {
-    const saved = localStorage.getItem('theme');
-    if (saved === 'dark') document.body.classList.add('dark-theme');
-}
-
-function copyEmail(e) {
-    e.preventDefault();
-    const email = 'ludmilakrause900@gmail.com';
-    navigator.clipboard.writeText(email).then(() => {
-        const tooltip = document.getElementById('emailTooltip');
-        if (tooltip) {
-            tooltip.textContent = currentLang === 'ru' ? 'Скопировано!' : 'Kopiert!';
-            tooltip.classList.add('show');
-            setTimeout(() => tooltip.classList.remove('show'), 2000);
-        }
-    }).catch(() => {
-        const textarea = document.createElement('textarea');
-        textarea.value = email;
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
-        const tooltip = document.getElementById('emailTooltip');
-        if (tooltip) {
-            tooltip.textContent = currentLang === 'ru' ? 'Скопировано!' : 'Kopiert!';
-            tooltip.classList.add('show');
-            setTimeout(() => tooltip.classList.remove('show'), 2000);
-        }
-    });
-}
-
-// ============================================
-// DOM Ready
-// ============================================
-document.addEventListener('DOMContentLoaded', async function() {
-    try {
-        let views = parseInt(localStorage.getItem('mila_page_views') || '0');
-        localStorage.setItem('mila_page_views', (views + 1).toString());
-    } catch(e) {}
-
-    initTheme();
-    try { await openDB(); } catch(e) { console.warn('IndexedDB недоступен:', e); }
-
-    if (IS_MOREWORKS) {
-        await renderMoreWorks();
-    } else {
-        await renderGallery();
-        await renderAboutPhoto();
-    }
-
-    const savedLang = localStorage.getItem('lang');
-    if (savedLang && savedLang !== currentLang) {
-        setLanguage(savedLang, false);
-    }
-
-    const langSwitch = document.getElementById('langSwitch');
-    const langMenu = document.getElementById('langMenu');
-
-    if (langSwitch && langMenu) {
-        langSwitch.addEventListener('click', function(e) {
-            e.stopPropagation();
-            langSwitch.classList.toggle('open');
-            langMenu.classList.toggle('open');
-        });
-
-        document.addEventListener('click', function() {
-            langSwitch.classList.remove('open');
-            langMenu.classList.remove('open');
-        });
-
-        langMenu.querySelectorAll('.lang-option').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                const lang = this.getAttribute('data-lang');
-                if (lang !== currentLang) {
-                    setLanguage(lang, true);
-                }
-                langSwitch.classList.remove('open');
-                langMenu.classList.remove('open');
-            });
-        });
-    }
-
-    const themeToggle = document.getElementById('themeToggle');
-    if (themeToggle) {
-        themeToggle.addEventListener('click', toggleTheme);
-    }
-
-    const menuToggle = document.getElementById('menuToggle');
-    const nav = document.getElementById('nav');
-    const header = document.getElementById('header');
-
-    if (menuToggle && nav) {
-        menuToggle.addEventListener('click', function() {
-            nav.classList.toggle('open');
-            const spans = menuToggle.querySelectorAll('span');
-            if (nav.classList.contains('open')) {
-                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
-            } else {
-                spans[0].style.transform = '';
-                spans[1].style.opacity = '';
-                spans[2].style.transform = '';
-            }
-        });
-
-        nav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('open');
-                const spans = menuToggle.querySelectorAll('span');
-                spans[0].style.transform = '';
-                spans[1].style.opacity = '';
-                spans[2].style.transform = '';
-            });
-        });
-    }
-
-    if (header) {
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 20) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-    }
-
-    if (!IS_MOREWORKS) {
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const offset = 80;
-                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
-                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-                }
-            });
-        });
-
-        const heroScroll = document.querySelector('.hero-scroll');
-        if (heroScroll) {
-            heroScroll.addEventListener('click', () => {
-                const services = document.getElementById('services');
-                if (services) services.scrollIntoView({ behavior: 'smooth' });
-            });
-        }
-    }
-});
