@@ -2,6 +2,7 @@
    Людмила Краусе — Художник, преподаватель
    Montserrat | Бирюзовый + цвета | RU/DE | Тёмная тема
    МИНИМАЛИСТИЧНЫЙ СТИЛЬ – ВСЕ ТЕКСТЫ ЧЁРНЫЕ
+   ГРАДИЕНТ СЛЕВА СВЕРХУ ВНИЗ
    ============================================ */
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -65,7 +66,7 @@
     --t: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --t-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
-    /* ===== ФОН САЙТА ===== */
+    /* ===== ФОН САЙТА – ГРАДИЕНТ СЛЕВА СВЕРХУ ВНИЗ ===== */
     --bg-primary: linear-gradient(180deg, #8bd6d2 0%, #ffffff 100%);
     --bg-surface: #ffffff;
 }
@@ -83,6 +84,7 @@ body {
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
     transition: background 0.4s ease, color 0.4s ease;
+    min-height: 100vh;
 }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
