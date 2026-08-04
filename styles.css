@@ -65,8 +65,8 @@
     --t: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --t-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
-    /* Переменные для светлой темы (70% бирюзового, 30% белого) */
-    --bg-primary: linear-gradient(135deg, var(--teal-50) 0%, var(--teal-200) 100%);
+    /* ===== НОВЫЙ ФОН САЙТА ===== */
+    --bg-primary: linear-gradient(180deg, #8bd6d2 0%, #ffffff 100%);
     --bg-surface: #ffffff;
     --text-primary: #ffffff;
     --text-surface: var(--slate-800);
@@ -307,7 +307,7 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
 }
 
 /* ============================================
-   SECTIONS COMMON — ТЕПЕРЬ ТЕКСТ ТЁМНЫЙ
+   SECTIONS COMMON — ТЕКСТ ТЁМНЫЙ
    ============================================ */
 .section-header { text-align: center; max-width: 640px; margin: 0 auto 56px; }
 .section-label {
@@ -628,7 +628,7 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
 }
 
 /* ============================================
-   ТЁМНАЯ ТЕМА — текст остаётся белым
+   ТЁМНАЯ ТЕМА — текст белый, фон тёмный
    ============================================ */
 body.dark-theme {
     background: #3C3C3C;
