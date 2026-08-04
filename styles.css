@@ -42,7 +42,6 @@
     --gradient-purple: linear-gradient(135deg, var(--purple) 0%, var(--indigo) 100%);
     --gradient-gold: linear-gradient(135deg, var(--gold) 0%, var(--amber) 100%);
     --gradient-blue: linear-gradient(135deg, var(--blue) 0%, var(--teal-400) 100%);
-    --gradient-hero: linear-gradient(135deg, var(--teal-50) 0%, #e0f7fa 30%, var(--teal-100) 60%, var(--purple-light) 100%);
     --gradient-footer: linear-gradient(135deg, var(--teal-700) 0%, var(--teal-800) 50%, var(--teal-900) 100%);
     --gradient-rainbow: linear-gradient(135deg, var(--teal-400), var(--blue), var(--purple), var(--coral));
 
@@ -90,14 +89,14 @@ body {
 .container { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
 
 /* ============================================
-   HEADER (светлая тема) — белая шапка
+   HEADER (светлая тема) — полупрозрачная шапка
    ============================================ */
 .header {
     position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
     background: rgba(255,255,255,0.85);
     backdrop-filter: blur(16px) saturate(1.2);
     -webkit-backdrop-filter: blur(16px) saturate(1.2);
-    border-bottom: 1px solid var(--slate-200);
+    border-bottom: 1px solid rgba(255,255,255,0.3);
     transition: var(--t);
 }
 .header.scrolled {
@@ -210,24 +209,26 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
 .menu-toggle span { display: block; width: 22px; height: 2.5px; background: var(--slate-700); border-radius: 2px; transition: var(--t); }
 
 /* ============================================
-   HERO
+   HERO — теперь прозрачный, использует общий фон
    ============================================ */
 .hero {
     position: relative; padding: 140px 0 100px; overflow: hidden;
-    background: var(--gradient-hero); min-height: 100vh; display: flex; align-items: center;
+    background: transparent;  /* убрали градиент */
+    min-height: 100vh; display: flex; align-items: center;
 }
+/* декоративные элементы оставляем, но они будут поверх фона */
 .hero-gradient {
     position: absolute; top: -20%; right: -10%; width: 700px; height: 700px;
-    background: radial-gradient(circle, rgba(20,184,166,0.2) 0%, transparent 65%);
+    background: radial-gradient(circle, rgba(20,184,166,0.15) 0%, transparent 65%);
     pointer-events: none;
 }
 .hero-blob {
-    position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; opacity: 0.35;
+    position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; opacity: 0.2;
 }
 .hero-blob-1 { width: 400px; height: 400px; background: var(--purple); top: 10%; left: -5%; }
-.hero-blob-2 { width: 300px; height: 300px; background: var(--coral); bottom: 10%; right: 10%; opacity: 0.2; }
+.hero-blob-2 { width: 300px; height: 300px; background: var(--coral); bottom: 10%; right: 10%; opacity: 0.15; }
 .hero-pattern {
-    position: absolute; inset: 0; opacity: 0.025;
+    position: absolute; inset: 0; opacity: 0.02;
     background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230d9488' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     pointer-events: none;
 }
@@ -235,7 +236,7 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
 
 .hero-badge {
     display: inline-flex; align-items: center; gap: 8px;
-    padding: 8px 18px; background: rgba(255,255,255,0.7);
+    padding: 8px 18px; background: rgba(255,255,255,0.8);
     border: 1px solid var(--teal-200);
     border-radius: var(--r-full);
     font-size: 0.8rem; font-weight: 700; text-transform: uppercase;
