@@ -156,7 +156,6 @@ const translations = {
     }
 };
 
-// ----- ОСТАЛЬНАЯ ЧАСТЬ script.js (без изменений) -----
 let currentLang = 'ru';
 let db = null;
 let currentGalleryCategory = 'personal';
@@ -166,7 +165,6 @@ const DB_NAME = 'MilaKrauseDB';
 const DB_VERSION = 2;
 const IS_MOREWORKS = location.pathname.includes('moreworks');
 
-// Статические файлы для fallback (если в IndexedDB пусто)
 const STATIC_FILES = {
     personal: [
         { name: '1s.jpg', wide: true },
@@ -194,12 +192,8 @@ const STATIC_FILES = {
     ]
 };
 
-// Статическое фото для раздела "Обо мне" — путь без ведущего слеша
 const STATIC_ABOUT_PHOTO = 'images/main.jpg';
 
-// ============================================
-// IndexedDB
-// ============================================
 function openDB() {
     return new Promise((resolve, reject) => {
         if (db && db.name === DB_NAME) {
@@ -283,9 +277,6 @@ function fileToBase64(file) {
     });
 }
 
-// ============================================
-// Render Gallery (главная)
-// ============================================
 async function renderGallery() {
     const grid = document.getElementById('galleryGrid');
     const tabsWrap = document.getElementById('galleryTabsWrap');
@@ -337,7 +328,6 @@ async function renderGalleryItems() {
         try { items = await getGallery(currentGalleryCategory); } catch(e) { console.warn('Gallery load error:', e); }
     }
 
-    // Если в IndexedDB нет фото — используем статические файлы
     const staticItems = STATIC_FILES[currentGalleryCategory] || [];
     const hasStatic = staticItems.length > 0;
 
@@ -346,7 +336,6 @@ async function renderGalleryItems() {
             const div = document.createElement('div');
             div.className = 'gallery-item' + (file.wide ? ' gallery-item-wide' : '');
             const img = document.createElement('img');
-            // Путь без ведущего слеша
             img.src = `images/${file.name}`;
             img.alt = `Работа ${index + 1}`;
             img.style.width = '100%';
@@ -431,7 +420,6 @@ async function renderGalleryItems() {
         return;
     }
 
-    // Если нет ни статики, ни данных из IndexedDB — показываем плейсхолдеры
     const defaults = [
         { wide: true }, { wide: false }, { wide: false },
         { wide: false }, { wide: false }, { wide: true }
@@ -454,9 +442,6 @@ async function renderGalleryItems() {
     });
 }
 
-// ============================================
-// Render About Photo (с fallback на main.jpg)
-// ============================================
 async function renderAboutPhoto() {
     const frame = document.getElementById('aboutFrame');
     if (!frame) return;
@@ -472,7 +457,6 @@ async function renderAboutPhoto() {
     const t = translations[currentLang];
     const alt = currentLang === 'ru' ? 'Фото художника' : 'Foto der Künstlerin';
 
-    // Если есть фото в IndexedDB — используем его
     if (photo && photo.data) {
         const img = document.createElement('img');
         img.src = photo.data;
@@ -498,7 +482,6 @@ async function renderAboutPhoto() {
         return;
     }
 
-    // Если нет в IndexedDB — пробуем загрузить main.jpg
     const img = document.createElement('img');
     img.src = STATIC_ABOUT_PHOTO;
     img.alt = alt;
@@ -522,9 +505,6 @@ async function renderAboutPhoto() {
     frame.appendChild(img);
 }
 
-// ============================================
-// Render More Works
-// ============================================
 async function renderMoreWorks() {
     const grid = document.getElementById('moreworksGrid');
     const empty = document.getElementById('moreworksEmpty');
@@ -583,7 +563,6 @@ async function renderMoreWorksItems() {
             div.className = 'moreworks-item';
             const alt = translations[currentLang]['work_' + (idx + 1)] || ('Работа ' + (idx + 1));
             const img = document.createElement('img');
-            // Путь без ведущего слеша
             img.src = `images/${file.name}`;
             img.alt = alt;
             img.loading = 'lazy';
@@ -678,9 +657,6 @@ async function renderMoreWorksItems() {
     });
 }
 
-// ============================================
-// Translations, Theme, etc.
-// ============================================
 function setLanguage(lang, animate = true) {
     currentLang = lang;
     const t = translations[lang];
@@ -708,3 +684,35 @@ function setLanguage(lang, animate = true) {
             renderAboutPhoto();
         }
     }
+}
+
+function applyTranslations(t, lang) {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key]) el.textContent = t[key];
+    });
+    document.title = t.title;
+    document.documentElement.lang = lang;
+
+    const langCurrent = document.getElementById('langCurrent');
+    if (langCurrent) langCurrent.textContent = lang.toUpperCase();
+
+    localStorage.setItem('lang', lang);
+}
+
+function toggleTheme() {
+    document.body.classList.toggle('dark-theme');
+    const isDark = document.body.classList.contains('dark-theme');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+}
+
+function initTheme() {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') document.body.classList.add('dark-theme');
+}
+
+function copyEmail(e) {
+    e.preventDefault();
+    const email = 'ludmilakrause900@gmail.com';
+    navigator.clipboard.writeText(email).then(() => {
+        const
