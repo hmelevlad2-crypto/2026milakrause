@@ -496,6 +496,9 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
     box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
 
+/* ============================================
+   ОТЗЫВЫ – ИЗОБРАЖЕНИЯ, ФИКСИРОВАННЫЙ РАЗМЕР 16:9
+   ============================================ */
 .reviews { padding: 100px 0; position: relative; overflow: hidden; background: transparent; }
 .reviews-blob {
     position: absolute; top: -100px; left: -100px; width: 400px; height: 400px;
@@ -503,34 +506,35 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
     pointer-events: none; opacity: 0.6;
 }
 
-/* ===== НОВЫЕ СТИЛИ ДЛЯ ОТЗЫВОВ (ИЗОБРАЖЕНИЯ) ===== */
 .reviews-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 20px;
     position: relative;
     z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .review-card {
     background: var(--bg-surface);
     border: 1px solid rgba(0,0,0,0.08);
     border-radius: var(--r-lg);
-    overflow: hidden;          /* чтобы изображение не вылезало за скругление */
+    overflow: hidden;
     box-shadow: var(--shadow-sm);
     transition: var(--t-slow);
-    aspect-ratio: 1 / 1;       /* делаем квадратными */
+    aspect-ratio: 16 / 9;       /* фиксированное соотношение 16:9 */
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 0;                /* убираем внутренние отступы */
+    padding: 0;
 }
 
 .review-card img {
     width: 100%;
     height: 100%;
-    object-fit: cover;         /* заполняет всю карточку, сохраняя пропорции */
+    object-fit: cover;          /* заполняет окно, обрезая лишнее */
     display: block;
     border-radius: inherit;
 }
@@ -556,7 +560,9 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
     padding: 16px;
 }
 
-/* ===== КОНЕЦ НОВЫХ СТИЛЕЙ ===== */
+/* ============================================
+   КОНЕЦ БЛОКА ОТЗЫВОВ
+   ============================================ */
 
 .contact { padding: 100px 0; position: relative; overflow: hidden; background: transparent; }
 .contact-blob {
@@ -698,6 +704,9 @@ body.dark-theme .contact-video-wrapper video {
     box-shadow: 0 4px 16px rgba(0,0,0,0.15);
 }
 
+/* ============================================
+   ТЁМНАЯ ТЕМА
+   ============================================ */
 body.dark-theme {
     background: #3C3C3C;
     color: #f0f0f0;
@@ -778,7 +787,6 @@ body.dark-theme .gallery-placeholder { color: rgba(255,255,255,0.3); }
 body.dark-theme .reviews { background: #3C3C3C; }
 body.dark-theme .reviews-blob { background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%); }
 
-/* Дополнительные тёмные стили для новых отзывов */
 body.dark-theme .review-card {
     background: #4a4a4a;
     border-color: rgba(255,255,255,0.08);
