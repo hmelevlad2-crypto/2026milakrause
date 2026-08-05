@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Дополнительные стили для админ-панели */
         .admin-section {
             padding: 120px 0 80px;
             min-height: 100vh;
@@ -139,7 +138,6 @@
     </style>
 </head>
 <body>
-    <!-- Header (переиспользуем тот же) -->
     <header class="header" id="header">
         <div class="container header-inner">
             <a href="index.html" class="logo">
@@ -183,7 +181,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-inner">
@@ -201,7 +198,6 @@
     </footer>
 
     <script>
-        // Подключаем счётчики из localStorage
         function getCounters() {
             return {
                 tg_click: parseInt(localStorage.getItem('tg_click') || '0'),
@@ -240,11 +236,9 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            // Тёмная тема (сохраняем синхронизацию с другими страницами)
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme === 'dark') document.body.classList.add('dark-theme');
 
-            // Кнопка переключения темы
             document.getElementById('themeToggle').addEventListener('click', function() {
                 document.body.classList.toggle('dark-theme');
                 localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
