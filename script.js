@@ -206,7 +206,7 @@ const STATIC_MAIN = {
 };
 
 // ============================================
-// СТАТИЧЕСКИЕ ФАЙЛЫ ДЛЯ MOREWORKS (по 20)
+// СТАТИЧЕСКИЕ ФАЙЛЫ ДЛЯ MOREWORKS (по 20 дополнительных)
 // ============================================
 const MAX_STATIC_MORE = 20;
 const STATIC_MORE = {
@@ -223,6 +223,13 @@ const STATIC_MORE = {
         wide: (i % 5 === 0)
     }))
 };
+
+// Комбинированный список для moreworks (сначала основные 6, потом доп. 20)
+function getMoreStatic(category) {
+    const main = STATIC_MAIN[category] || [];
+    const extra = STATIC_MORE[category] || [];
+    return [...main, ...extra];
+}
 
 const STATIC_ABOUT_PHOTO = 'images/main.jpg';
 
@@ -646,8 +653,8 @@ async function renderMoreWorksItems() {
         try { items = await getGallery(currentGalleryCategory); } catch(e) { console.warn('MoreWorks load error:', e); }
     }
 
-    // Используем STATIC_MORE для страницы "все работы"
-    const staticItems = STATIC_MORE[currentGalleryCategory] || [];
+    // Для moreworks используем комбинированный список: сначала основные 6, затем дополнительные 20
+    const staticItems = getMoreStatic(currentGalleryCategory);
 
     if (items.length === 0 && staticItems.length > 0) {
         if (empty) empty.classList.remove('show');
