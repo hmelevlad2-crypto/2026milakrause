@@ -497,7 +497,7 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
 }
 
 /* ============================================
-   ОТЗЫВЫ – ИЗОБРАЖЕНИЯ, ФИКСИРОВАННЫЙ РАЗМЕР 16:9
+   ОТЗЫВЫ – ИЗОБРАЖЕНИЯ, ФИКСИРОВАННЫЙ РАЗМЕР 4:3 (увеличен)
    ============================================ */
 .reviews { padding: 100px 0; position: relative; overflow: hidden; background: transparent; }
 .reviews-blob {
@@ -509,10 +509,10 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
 .reviews-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 24px;
     position: relative;
     z-index: 1;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -523,7 +523,7 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
     overflow: hidden;
     box-shadow: var(--shadow-sm);
     transition: var(--t-slow);
-    aspect-ratio: 16 / 9;       /* фиксированное соотношение 16:9 */
+    aspect-ratio: 4 / 3;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -534,7 +534,7 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
 .review-card img {
     width: 100%;
     height: 100%;
-    object-fit: cover;          /* заполняет окно, обрезая лишнее */
+    object-fit: cover;
     display: block;
     border-radius: inherit;
 }
@@ -545,7 +545,6 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
     border-color: rgba(0,0,0,0.15);
 }
 
-/* Плейсхолдер, если изображение не загрузилось */
 .review-placeholder {
     display: flex;
     align-items: center;
@@ -559,6 +558,9 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
     text-align: center;
     padding: 16px;
 }
+/* ============================================
+   КОНЕЦ БЛОКА ОТЗЫВОВ
+   ============================================ */
 
 /* ============================================
    КОНЕЦ БЛОКА ОТЗЫВОВ
