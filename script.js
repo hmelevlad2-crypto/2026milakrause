@@ -264,7 +264,7 @@ const STATIC_ABOUT_PHOTO = 'images/main.jpg';
 // ============================================
 
 // ============================================
-// RENDER REVIEWS (изображения rev1, rev2, rev3)
+// RENDER REVIEWS (изображения rev1, rev2, rev3, rev4)
 // ============================================
 function renderReviews() {
     const grid = document.getElementById('reviewsGrid');
@@ -272,7 +272,7 @@ function renderReviews() {
 
     grid.innerHTML = '';
 
-    const imageNames = ['rev1', 'rev2', 'rev3'];
+    const imageNames = ['rev1', 'rev2', 'rev3', 'rev4'];   // ← добавили rev4
 
     imageNames.forEach((name, index) => {
         const card = document.createElement('div');
@@ -282,9 +282,7 @@ function renderReviews() {
         img.alt = `Отзыв ${index + 1}`;
         img.loading = 'lazy';
 
-        // Пробуем загрузить .jpg, затем .png, затем .jpeg
         tryLoadImage(img, name, ['jpg', 'png', 'jpeg'], () => {
-            // Если ни одно расширение не загрузилось – показываем плейсхолдер
             const placeholder = document.createElement('div');
             placeholder.className = 'review-placeholder';
             placeholder.textContent = `Отзыв ${index + 1}`;
