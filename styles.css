@@ -540,6 +540,59 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
 }
 
 /* ============================================
+   REVIEWS — карточки в 3 колонки (как услуги)
+   ============================================ */
+.reviews { padding: 100px 0; position: relative; overflow: hidden; background: transparent; }
+.reviews-blob {
+    position: absolute; top: -100px; left: -100px; width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+    pointer-events: none; opacity: 0.6;
+}
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    position: relative;
+    z-index: 1;
+}
+.review-card {
+    background: var(--bg-surface);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: var(--r-lg);
+    padding: 28px 24px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--t-slow);
+    position: relative;
+    overflow: hidden;
+}
+.review-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--black);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: var(--t-slow);
+}
+.review-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(0,0,0,0.15);
+}
+.review-card:hover::before {
+    transform: scaleX(1);
+}
+.review-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--black);
+    font-weight: 400;
+}
+
+/* ============================================
    CONTACT (с видео внутри)
    ============================================ */
 .contact { padding: 100px 0; position: relative; overflow: hidden; background: transparent; }
@@ -650,8 +703,8 @@ body.dark-theme .contact-video-wrapper video {
     left: 0;
     right: 0;
     height: 2px;
-    background: #000000;       /* чёрная полоска */
-    opacity: 0.25;             /* немного прозрачная, чтобы не слишком резко */
+    background: #000000;
+    opacity: 0.25;
 }
 .footer-inner {
     display: flex;
@@ -694,7 +747,7 @@ body.dark-theme .footer {
 }
 body.dark-theme .footer::before {
     background: #000000;
-    opacity: 0.5;              /* в тёмной теме сделать чуть виднее */
+    opacity: 0.5;
 }
 body.dark-theme .footer p {
     color: rgba(255,255,255,0.8);
@@ -789,6 +842,23 @@ body.dark-theme .gallery-item { background: linear-gradient(135deg, #4a4a4a, #3C
 body.dark-theme .gallery-item::after { background: var(--gradient-rainbow); opacity: 0; }
 body.dark-theme .gallery-item:hover::after { opacity: 0.1; }
 body.dark-theme .gallery-placeholder { color: rgba(255,255,255,0.3); }
+
+/* Тёмная тема для отзывов */
+body.dark-theme .reviews { background: #3C3C3C; }
+body.dark-theme .reviews-blob { background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%); }
+body.dark-theme .review-card {
+    background: #4a4a4a;
+    border-color: rgba(255,255,255,0.08);
+}
+body.dark-theme .review-card:hover {
+    border-color: rgba(255,255,255,0.2);
+}
+body.dark-theme .review-card::before {
+    background: #ffffff;
+}
+body.dark-theme .review-text {
+    color: #f0f0f0;
+}
 
 body.dark-theme .contact {
     background: #323232;
@@ -1035,6 +1105,7 @@ body.dark-theme .moreworks-empty svg {
     .about-grid { gap: 48px; }
     .gallery-grid { grid-template-columns: repeat(2, 1fr); }
     .gallery-item-wide { grid-column: span 2; aspect-ratio: 2/1; }
+    .reviews-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
@@ -1061,6 +1132,7 @@ body.dark-theme .moreworks-empty svg {
     .about-float-card { right: 10px; bottom: -10px; }
     .gallery-grid { grid-template-columns: 1fr 1fr; }
     .gallery-item-wide { grid-column: span 2; }
+    .reviews-grid { grid-template-columns: 1fr; }  /* на мобильных 1 колонка */
     .contact-grid { grid-template-columns: 1fr; }
     .stats { grid-template-columns: repeat(2, 1fr); }
     .footer-inner { flex-direction: column; text-align: center; }
