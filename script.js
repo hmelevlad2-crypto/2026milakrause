@@ -175,31 +175,21 @@ const DB_NAME = 'MilaKrauseDB';
 const DB_VERSION = 2;
 const IS_MOREWORKS = location.pathname.includes('moreworks');
 
+// ===== НОВЫЙ СПИСОК СТАТИЧЕСКИХ ФАЙЛОВ (до 20 на категорию) =====
+const MAX_STATIC = 20;
 const STATIC_FILES = {
-    personal: [
-        { name: '1s.jpg', wide: true },
-        { name: '2.jpg', wide: false },
-        { name: '3.jpg', wide: false },
-        { name: '4.jpg', wide: false },
-        { name: '5.jpg', wide: false },
-        { name: '6s.jpg', wide: true }
-    ],
-    students: [
-        { name: '11s.jpg', wide: true },
-        { name: '22.jpg', wide: false },
-        { name: '33.jpg', wide: false },
-        { name: '44.jpg', wide: false },
-        { name: '55.jpg', wide: false },
-        { name: '66s.jpg', wide: true }
-    ],
-    neuro: [
-        { name: '111s.jpg', wide: true },
-        { name: '222.jpg', wide: false },
-        { name: '333.jpg', wide: false },
-        { name: '444.jpg', wide: false },
-        { name: '555.jpg', wide: false },
-        { name: '666s.jpg', wide: true }
-    ]
+    personal: Array.from({ length: MAX_STATIC }, (_, i) => ({
+        name: `lic${i + 1}.jpg`,
+        wide: (i % 5 === 0) // широкие карточки для индексов 0, 5, 10, 15
+    })),
+    students: Array.from({ length: MAX_STATIC }, (_, i) => ({
+        name: `ych${i + 1}.jpg`,
+        wide: (i % 5 === 0)
+    })),
+    neuro: Array.from({ length: MAX_STATIC }, (_, i) => ({
+        name: `neiro${i + 1}.jpg`,
+        wide: (i % 5 === 0)
+    }))
 };
 
 const STATIC_ABOUT_PHOTO = 'images/main.jpg';
@@ -261,7 +251,7 @@ function dbSet(key, value) {
 
 function dbDelete(key) {
     return new Promise((resolve, reject) => {
-        const tx = db.transaction('photos', 'readwrite');
+        const tx = db.transaction('photos', 'readonly');
         const store = tx.objectStore('photos');
         const req = store.delete(key);
         req.onsuccess = () => resolve();
@@ -482,6 +472,7 @@ async function renderGalleryItems() {
         return;
     }
 
+    // fallback (если нет статических и нет данных)
     const defaults = [
         { wide: true }, { wide: false }, { wide: false },
         { wide: false }, { wide: false }, { wide: true }
