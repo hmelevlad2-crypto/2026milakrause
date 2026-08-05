@@ -175,18 +175,50 @@ const DB_NAME = 'MilaKrauseDB';
 const DB_VERSION = 2;
 const IS_MOREWORKS = location.pathname.includes('moreworks');
 
-// ===== НОВЫЙ СПИСОК СТАТИЧЕСКИХ ФАЙЛОВ (до 20 на категорию) =====
-const MAX_STATIC = 20;
-const STATIC_FILES = {
-    personal: Array.from({ length: MAX_STATIC }, (_, i) => ({
+// ============================================
+// СТАТИЧЕСКИЕ ФАЙЛЫ ДЛЯ ГЛАВНОЙ (6 файлов)
+// ============================================
+const STATIC_MAIN = {
+    personal: [
+        { name: '1s.jpg', wide: true },
+        { name: '2.jpg', wide: false },
+        { name: '3.jpg', wide: false },
+        { name: '4.jpg', wide: false },
+        { name: '5.jpg', wide: false },
+        { name: '6s.jpg', wide: true }
+    ],
+    students: [
+        { name: '11s.jpg', wide: true },
+        { name: '22.jpg', wide: false },
+        { name: '33.jpg', wide: false },
+        { name: '44.jpg', wide: false },
+        { name: '55.jpg', wide: false },
+        { name: '66s.jpg', wide: true }
+    ],
+    neuro: [
+        { name: '111s.jpg', wide: true },
+        { name: '222.jpg', wide: false },
+        { name: '333.jpg', wide: false },
+        { name: '444.jpg', wide: false },
+        { name: '555.jpg', wide: false },
+        { name: '666s.jpg', wide: true }
+    ]
+};
+
+// ============================================
+// СТАТИЧЕСКИЕ ФАЙЛЫ ДЛЯ MOREWORKS (по 20)
+// ============================================
+const MAX_STATIC_MORE = 20;
+const STATIC_MORE = {
+    personal: Array.from({ length: MAX_STATIC_MORE }, (_, i) => ({
         name: `lic${i + 1}.jpg`,
-        wide: (i % 5 === 0) // широкие карточки для индексов 0, 5, 10, 15
+        wide: (i % 5 === 0)
     })),
-    students: Array.from({ length: MAX_STATIC }, (_, i) => ({
+    students: Array.from({ length: MAX_STATIC_MORE }, (_, i) => ({
         name: `ych${i + 1}.jpg`,
         wide: (i % 5 === 0)
     })),
-    neuro: Array.from({ length: MAX_STATIC }, (_, i) => ({
+    neuro: Array.from({ length: MAX_STATIC_MORE }, (_, i) => ({
         name: `neiro${i + 1}.jpg`,
         wide: (i % 5 === 0)
     }))
@@ -380,7 +412,8 @@ async function renderGalleryItems() {
         try { items = await getGallery(currentGalleryCategory); } catch(e) { console.warn('Gallery load error:', e); }
     }
 
-    const staticItems = STATIC_FILES[currentGalleryCategory] || [];
+    // Используем STATIC_MAIN для главной страницы
+    const staticItems = STATIC_MAIN[currentGalleryCategory] || [];
     const hasStatic = staticItems.length > 0;
 
     if (items.length === 0 && hasStatic) {
@@ -472,7 +505,7 @@ async function renderGalleryItems() {
         return;
     }
 
-    // fallback (если нет статических и нет данных)
+    // fallback (если нет статических и нет данных) – используем те же 6
     const defaults = [
         { wide: true }, { wide: false }, { wide: false },
         { wide: false }, { wide: false }, { wide: true }
@@ -613,7 +646,8 @@ async function renderMoreWorksItems() {
         try { items = await getGallery(currentGalleryCategory); } catch(e) { console.warn('MoreWorks load error:', e); }
     }
 
-    const staticItems = STATIC_FILES[currentGalleryCategory] || [];
+    // Используем STATIC_MORE для страницы "все работы"
+    const staticItems = STATIC_MORE[currentGalleryCategory] || [];
 
     if (items.length === 0 && staticItems.length > 0) {
         if (empty) empty.classList.remove('show');
