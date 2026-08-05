@@ -66,8 +66,8 @@
     --t: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --t-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
-    /* ===== ФОН САЙТА – ГРАДИЕНТ СЛЕВА СВЕРХУ ВНИЗ ===== */
-    --bg-primary: linear-gradient(180deg, #8bd6d2 0%, #ffffff 100%);
+    /* ===== ФОН САЙТА – 90% #8cd7d2, 10% белый ===== */
+    --bg-primary: linear-gradient(180deg, #8cd7d2 0%, #8cd7d2 90%, #ffffff 100%);
     --bg-surface: #ffffff;
 }
 
@@ -551,8 +551,8 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
 
 /* ВИДЕО-БЛОК ВНУТРИ КОНТАКТОВ */
 .contact-video-wrapper {
-    max-width: 900px;            /* ограничение ширины 900px */
-    margin: 40px auto 48px;      /* отступ сверху и снизу */
+    max-width: 900px;
+    margin: 40px auto 48px;
     text-align: center;
 }
 .contact-video-wrapper video {
@@ -567,7 +567,7 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
     font-size: 0.8rem;
     font-weight: 600;
     color: var(--black);
-    margin-top: 12px;            /* подпись под видео */
+    margin-top: 12px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
@@ -634,36 +634,84 @@ body.dark-theme .contact-video-wrapper video {
 .contact-note svg { flex-shrink: 0; color: var(--black); margin-top: 2px; opacity: 0.6; }
 
 /* ============================================
-   FOOTER
+   FOOTER — теперь #8cd7d2 (светлый)
    ============================================ */
 .footer {
-    padding: 32px 0; background: var(--gradient-footer); color: var(--white);
-    position: relative; overflow: hidden;
+    padding: 32px 0;
+    background: #8cd7d2;    /* новый цвет */
+    color: var(--black);    /* текст чёрный */
+    position: relative;
+    overflow: hidden;
 }
 .footer::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-    background: var(--gradient-rainbow); opacity: 0.6;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-rainbow);
+    opacity: 0.3;
 }
-.footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; position: relative; z-index: 1; }
-.footer p { font-size: 0.78rem; font-weight: 400; opacity: 0.8; }
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+.footer p {
+    font-size: 0.78rem;
+    font-weight: 600;
+    opacity: 0.9;
+    color: var(--black);
+}
 
 .footer-socials { display: flex; gap: 12px; }
 .footer-social {
     display: flex; align-items: center; justify-content: center;
     width: 36px; height: 36px; border-radius: 50%;
-    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
-    color: var(--white); transition: var(--t); text-decoration: none;
+    background: rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.15);
+    color: var(--black);
+    transition: var(--t);
+    text-decoration: none;
 }
 .footer-social:hover {
-    background: var(--white);
-    border-color: var(--white);
-    color: var(--black);
+    background: var(--black);
+    border-color: var(--black);
+    color: var(--white);
     transform: translateY(-3px) scale(1.1);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+/* Тёмная тема для футера — возвращаем тёмный фон и белый текст */
+body.dark-theme .footer {
+    background: linear-gradient(135deg, #2a2a2a 0%, #3C3C3C 50%, #2a2a2a 100%);
+    color: #f0f0f0;
+}
+body.dark-theme .footer p {
+    color: rgba(255,255,255,0.8);
+}
+body.dark-theme .footer-social {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.2);
+    color: #ffffff;
+}
+body.dark-theme .footer-social:hover {
+    background: #ffffff;
+    border-color: #ffffff;
+    color: #3C3C3C;
+}
+body.dark-theme .footer::before {
+    background: linear-gradient(90deg, transparent, #ffffff, transparent);
+    opacity: 0.3;
 }
 
 /* ============================================
-   ТЁМНАЯ ТЕМА — текст белый, фон тёмный
+   ТЁМНАЯ ТЕМА (остальные элементы)
    ============================================ */
 body.dark-theme {
     background: #3C3C3C;
@@ -807,24 +855,6 @@ body.dark-theme .btn-small.btn-header:hover {
     background: rgba(255,255,255,0.1);
     border-color: #ffffff;
     color: #ffffff;
-}
-
-body.dark-theme .footer {
-    background: linear-gradient(135deg, #2a2a2a 0%, #3C3C3C 50%, #2a2a2a 100%);
-}
-body.dark-theme .footer::before {
-    background: linear-gradient(90deg, transparent, #ffffff, transparent);
-    opacity: 0.3;
-}
-body.dark-theme .footer-social {
-    background: rgba(255,255,255,0.08);
-    border-color: rgba(255,255,255,0.15);
-    color: #ffffff;
-}
-body.dark-theme .footer-social:hover {
-    background: #ffffff;
-    border-color: #ffffff;
-    color: #3C3C3C;
 }
 
 body.dark-theme .nav.open {
