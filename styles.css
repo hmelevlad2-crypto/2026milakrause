@@ -66,8 +66,8 @@
     --t: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --t-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
-    /* ===== ФОН САЙТА – 90% #8cd7d2, 10% белый ===== */
-    --bg-primary: linear-gradient(180deg, #8cd7d2 0%, #8cd7d2 90%, #ffffff 100%);
+    /* ===== ФОН САЙТА – 80% #8cd7d2, 20% белый ===== */
+    --bg-primary: linear-gradient(180deg, #8cd7d2 0%, #8cd7d2 80%, #ffffff 100%);
     --bg-surface: #ffffff;
 }
 
@@ -634,12 +634,12 @@ body.dark-theme .contact-video-wrapper video {
 .contact-note svg { flex-shrink: 0; color: var(--black); margin-top: 2px; opacity: 0.6; }
 
 /* ============================================
-   FOOTER — теперь #8cd7d2 (светлый)
+   FOOTER — #8cd7d2, полоска чёрная
    ============================================ */
 .footer {
     padding: 32px 0;
-    background: #8cd7d2;    /* новый цвет */
-    color: var(--black);    /* текст чёрный */
+    background: #8cd7d2;
+    color: var(--black);
     position: relative;
     overflow: hidden;
 }
@@ -649,9 +649,9 @@ body.dark-theme .contact-video-wrapper video {
     top: 0;
     left: 0;
     right: 0;
-    height: 3px;
-    background: var(--gradient-rainbow);
-    opacity: 0.3;
+    height: 2px;
+    background: #000000;       /* чёрная полоска */
+    opacity: 0.25;             /* немного прозрачная, чтобы не слишком резко */
 }
 .footer-inner {
     display: flex;
@@ -687,10 +687,14 @@ body.dark-theme .contact-video-wrapper video {
     box-shadow: 0 4px 16px rgba(0,0,0,0.15);
 }
 
-/* Тёмная тема для футера — возвращаем тёмный фон и белый текст */
+/* Тёмная тема для футера */
 body.dark-theme .footer {
     background: linear-gradient(135deg, #2a2a2a 0%, #3C3C3C 50%, #2a2a2a 100%);
     color: #f0f0f0;
+}
+body.dark-theme .footer::before {
+    background: #000000;
+    opacity: 0.5;              /* в тёмной теме сделать чуть виднее */
 }
 body.dark-theme .footer p {
     color: rgba(255,255,255,0.8);
@@ -704,10 +708,6 @@ body.dark-theme .footer-social:hover {
     background: #ffffff;
     border-color: #ffffff;
     color: #3C3C3C;
-}
-body.dark-theme .footer::before {
-    background: linear-gradient(90deg, transparent, #ffffff, transparent);
-    opacity: 0.3;
 }
 
 /* ============================================
