@@ -602,7 +602,7 @@ async function renderAboutPhoto() {
 }
 
 // ============================================
-// Render More Works
+// Render More Works (с удалением отсутствующих файлов)
 // ============================================
 async function renderMoreWorks() {
     const grid = document.getElementById('moreworksGrid');
@@ -658,6 +658,7 @@ async function renderMoreWorksItems() {
 
     if (items.length === 0 && staticItems.length > 0) {
         if (empty) empty.classList.remove('show');
+        let addedCount = 0;
         staticItems.forEach((file, idx) => {
             const div = document.createElement('div');
             div.className = 'moreworks-item';
@@ -669,20 +670,13 @@ async function renderMoreWorksItems() {
             img.style.width = '100%';
             img.style.aspectRatio = '1';
             img.style.objectFit = 'cover';
+            // Если изображение не загрузилось – удаляем весь элемент
             img.onerror = function() {
-                this.parentElement.innerHTML = `
-                    <div class="moreworks-placeholder" style="padding:40px;text-align:center;color:var(--slate-400);">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="opacity:0.5;">
-                            <rect x="3" y="3" width="18" height="18" rx="2"/>
-                            <circle cx="8.5" cy="8.5" r="1.5"/>
-                            <path d="M21 15l-5-5L5 21"/>
-                        </svg>
-                    </div>
-                    <div class="moreworks-caption">
-                        <span class="moreworks-num">#${idx + 1}</span>
-                        <span class="moreworks-name">${alt}</span>
-                    </div>
-                `;
+                div.remove();
+                // Проверяем, не стал ли grid пустым после удаления
+                if (grid.children.length === 0 && empty) {
+                    empty.classList.add('show');
+                }
             };
             div.appendChild(img);
             const caption = document.createElement('div');
@@ -693,7 +687,12 @@ async function renderMoreWorksItems() {
             `;
             div.appendChild(caption);
             grid.appendChild(div);
+            addedCount++;
         });
+        // Если после добавления всех элементов не осталось ни одного (все удалены)
+        if (grid.children.length === 0 && empty) {
+            empty.classList.add('show');
+        }
         return;
     }
 
@@ -716,19 +715,10 @@ async function renderMoreWorksItems() {
             img.style.aspectRatio = '1';
             img.style.objectFit = 'cover';
             img.onerror = function() {
-                this.parentElement.innerHTML = `
-                    <div class="moreworks-placeholder" style="padding:40px;text-align:center;color:var(--slate-400);">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="opacity:0.5;">
-                            <rect x="3" y="3" width="18" height="18" rx="2"/>
-                            <circle cx="8.5" cy="8.5" r="1.5"/>
-                            <path d="M21 15l-5-5L5 21"/>
-                        </svg>
-                    </div>
-                    <div class="moreworks-caption">
-                        <span class="moreworks-num">#${idx + 1}</span>
-                        <span class="moreworks-name">${alt}</span>
-                    </div>
-                `;
+                div.remove();
+                if (grid.children.length === 0 && empty) {
+                    empty.classList.add('show');
+                }
             };
             div.appendChild(img);
             const caption = document.createElement('div');
@@ -739,19 +729,8 @@ async function renderMoreWorksItems() {
             `;
             div.appendChild(caption);
         } else {
-            div.innerHTML = `
-                <div class="moreworks-placeholder" style="padding:40px;text-align:center;color:var(--slate-400);">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="opacity:0.5;">
-                        <rect x="3" y="3" width="18" height="18" rx="2"/>
-                        <circle cx="8.5" cy="8.5" r="1.5"/>
-                        <path d="M21 15l-5-5L5 21"/>
-                    </svg>
-                </div>
-                <div class="moreworks-caption">
-                    <span class="moreworks-num">#${idx + 1}</span>
-                    <span class="moreworks-name">${alt}</span>
-                </div>
-            `;
+            // Если данных нет – не создаём ячейку
+            return;
         }
         grid.appendChild(div);
     });
