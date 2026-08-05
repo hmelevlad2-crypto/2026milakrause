@@ -620,7 +620,7 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
     font-size: 0.8rem;
     font-weight: 600;
     color: var(--black);
-    margin-bottom: 12px;
+    margin-top: 12px;            /* изменено: отступ сверху, а не снизу */
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
