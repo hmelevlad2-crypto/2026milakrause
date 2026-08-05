@@ -1,5 +1,5 @@
 // ============================================
-// Людмила Краусе — Художник, преподаватель
+// Людмила Краузе — Художник, преподаватель
 // Montserrat | Бирюзовый + цвета | RU/DE | Тёмная тема
 // Фото: IndexedDB + статические fallback (из /images)
 // ============================================
@@ -258,19 +258,84 @@ function getMoreStatic(category) {
 
 const STATIC_ABOUT_PHOTO = 'images/main.jpg';
 
-// Отзывы на русском и немецком
-const REVIEWS_DATA = {
-    ru: [
-        'С большим удовольствием хочу порекомендовать Людмилу как замечательного художника-педагога. Моя дочь с огромной радостью посещает занятия по рисованию. Людмила очень профессионально, терпеливо и с душой подходит к каждому ребёнку. Она умеет пробудить интерес, поддержать и развить творческие способности. Дочь не только освоила разные техники, но и стала более уверенной в себе. Атмосфера на занятиях тёплая и вдохновляющая. Огромная благодарность за ваш труд, терпение и любовь к своему делу!',
-        'Искренне благодарна за возможность познакомиться и пройти курс по нейрографике. Это бесценный опыт. Людмила – не только профессионал высочайшего уровня, но и замечательный человек. Общение с ней наполняет энергией и вдохновением. Её поддержка и внимание на протяжении всего курса помогают двигаться вперёд, открывать новые горизонты и глубже понимать себя. Благодарю от всей души за знания, тепло и поддержку!',
-        'Мой сын занимался у Людмилы частными уроками живописи. Ему очень нравилось, он чувствовал себя комфортно и безопасно. Уроки приносили ему много радости и помогли развить его творческие способности. Мы особенно ценим индивидуальный подход, внимание к сильным сторонам ребёнка. Сын всегда с большим энтузиазмом шёл на занятия. Рекомендуем Людмилу от всей души!'
-    ],
-    de: [
-        'Ich bin sehr dankbar, dass ich die Gelegenheit hatte, Sie kennenzulernen und an Ihrem Kurs teilzunehmen. Für mich ist das von unschätzbarem Wert. Sie sind nicht nur eine hervorragende Expertin, sondern auch ein wunderbarer Mensch. Die Kommunikation mit Ihnen ist angenehm und inspirierend, und Ihre professionelle Begleitung während des gesamten Neurographik-Kurses gibt Sicherheit, Motivation und Unterstützung auf dem Weg der persönlichen Entwicklung. Dank Ihrer Aufmerksamkeit, Ihres Wissens und Ihres Engagements wird dieser Transformationsprozess zu einer wertvollen und bereichernden Erfahrung. Ich danke Ihnen von Herzen für Ihre Arbeit, Ihre Inspiration und Ihre Unterstützung.',
-        'Ich möchte unserer wunderbaren Kunstlehrerin von Herzen danken. Meine Tochter besucht den Unterricht mit großer Freude und freut sich jedes Mal auf die nächste Stunde. Besonders schätze ich die professionelle, geduldige und herzliche Art, mit der sie die Kinder begleitet. Sie schafft es, meine Tochter zu motivieren, ihr Selbstvertrauen zu stärken und ihr kreatives Potenzial zu entfalten. Dabei lernt sie nicht nur verschiedene Maltechniken, sondern entwickelt auch ihre Fantasie und Ausdruckskraft. Die warme und freundliche Atmosphäre im Unterricht sorgt dafür, dass sich die Kinder jederzeit wohlfühlen. Vielen Dank für Ihr großes Engagement, Ihre Geduld und Ihre Leidenschaft. Wir können den Malunterricht bei Ludmilla von ganzem Herzen weiterempfehlen.',
-        'Mein Sohn hat bei Ludmilla privaten Malunterricht erhalten. Er hat sich dort jederzeit wohl, sicher und bestens aufgehoben gefühlt. Der Unterricht hat ihm viel Freude bereitet und ihm ermöglicht, seine kreativen Fähigkeiten weiterzuentwickeln. Besonders geschätzt haben wir, dass Ludmilla individuell auf jedes Kind eingeht, seine Stärken erkennt und gezielt fördert. Mein Sohn ist immer mit großer Begeisterung zum Malunterricht gegangen. Wir können Ludmilla von Herzen weiterempfehlen.'
-    ]
-};
+// ============================================
+// ОТЗЫВЫ – ТЕПЕРЬ ЭТО ИЗОБРАЖЕНИЯ
+// (старые текстовые отзывы больше не используются)
+// ============================================
+
+// ============================================
+// RENDER REVIEWS (изображения rev1, rev2, rev3)
+// ============================================
+function renderReviews() {
+    const grid = document.getElementById('reviewsGrid');
+    if (!grid) return;
+
+    grid.innerHTML = '';
+
+    const imageNames = ['rev1', 'rev2', 'rev3'];
+
+    imageNames.forEach((name, index) => {
+        const card = document.createElement('div');
+        card.className = 'review-card';
+
+        const img = document.createElement('img');
+        img.alt = `Отзыв ${index + 1}`;
+        img.loading = 'lazy';
+
+        // Пробуем загрузить .jpg, затем .png, затем .jpeg
+        tryLoadImage(img, name, ['jpg', 'png', 'jpeg'], () => {
+            // Если ни одно расширение не загрузилось – показываем плейсхолдер
+            const placeholder = document.createElement('div');
+            placeholder.className = 'review-placeholder';
+            placeholder.textContent = `Отзыв ${index + 1}`;
+            card.innerHTML = '';
+            card.appendChild(placeholder);
+        });
+
+        card.appendChild(img);
+        grid.appendChild(card);
+    });
+}
+
+// Вспомогательная функция для последовательной попытки загрузки
+function tryLoadImage(imgElement, baseName, extensions, onFail) {
+    let extIndex = 0;
+
+    function tryNext() {
+        if (extIndex >= extensions.length) {
+            if (typeof onFail === 'function') onFail();
+            return;
+        }
+        const ext = extensions[extIndex];
+        imgElement.src = `images/${baseName}.${ext}`;
+        extIndex++;
+        // Обработчик ошибки будет срабатывать, если файл не найден
+        imgElement.onerror = function() {
+            // Очищаем onerror, чтобы не зациклиться
+            imgElement.onerror = null;
+            tryNext();
+        };
+        // Если загрузилось успешно – onerror не вызовется
+        imgElement.onload = function() {
+            // Всё хорошо
+        };
+    }
+
+    tryNext();
+}
+
+// ============================================
+// VIDEO THEME SWITCH
+// ============================================
+function updateVideoSource() {
+    const video = document.getElementById('aboutVideo');
+    const source = document.getElementById('videoSource');
+    if (!video || !source) return;
+    
+    const isDark = document.body.classList.contains('dark-theme');
+    source.src = isDark ? 'images/movie2.mp4' : 'images/movie1.mp4';
+    video.load();
+}
 
 function openDB() {
     return new Promise((resolve, reject) => {
@@ -353,41 +418,6 @@ function fileToBase64(file) {
         reader.onerror = reject;
         reader.readAsDataURL(file);
     });
-}
-
-// ============================================
-// RENDER REVIEWS
-// ============================================
-function renderReviews() {
-    const grid = document.getElementById('reviewsGrid');
-    if (!grid) return;
-    
-    const lang = currentLang;
-    const reviews = REVIEWS_DATA[lang] || REVIEWS_DATA.ru;
-    
-    grid.innerHTML = '';
-    
-    reviews.forEach((text) => {
-        const card = document.createElement('div');
-        card.className = 'review-card';
-        card.innerHTML = `
-            <div class="review-text">${text}</div>
-        `;
-        grid.appendChild(card);
-    });
-}
-
-// ============================================
-// VIDEO THEME SWITCH
-// ============================================
-function updateVideoSource() {
-    const video = document.getElementById('aboutVideo');
-    const source = document.getElementById('videoSource');
-    if (!video || !source) return;
-    
-    const isDark = document.body.classList.contains('dark-theme');
-    source.src = isDark ? 'images/movie2.mp4' : 'images/movie1.mp4';
-    video.load();
 }
 
 // ============================================
