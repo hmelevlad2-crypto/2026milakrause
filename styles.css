@@ -602,7 +602,6 @@ body.dark-theme .theme-toggle .moon-icon { opacity: 1; transform: scale(1); }
     pointer-events: none; opacity: 0.5;
 }
 
-/* ВИДЕО-БЛОК ВНУТРИ КОНТАКТОВ */
 .contact-video-wrapper {
     max-width: 900px;
     margin: 40px auto 48px;
@@ -631,7 +630,6 @@ body.dark-theme .contact-video-wrapper video {
     background: #4a4a4a;
 }
 
-/* Сетка контактов (две колонки) */
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
 
 .contact-info, .contact-form-wrap {
@@ -740,7 +738,6 @@ body.dark-theme .contact-video-wrapper video {
     box-shadow: 0 4px 16px rgba(0,0,0,0.15);
 }
 
-/* Тёмная тема для футера */
 body.dark-theme .footer {
     background: linear-gradient(135deg, #2a2a2a 0%, #3C3C3C 50%, #2a2a2a 100%);
     color: #f0f0f0;
@@ -843,7 +840,6 @@ body.dark-theme .gallery-item::after { background: var(--gradient-rainbow); opac
 body.dark-theme .gallery-item:hover::after { opacity: 0.1; }
 body.dark-theme .gallery-placeholder { color: rgba(255,255,255,0.3); }
 
-/* Тёмная тема для отзывов */
 body.dark-theme .reviews { background: #3C3C3C; }
 body.dark-theme .reviews-blob { background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%); }
 body.dark-theme .review-card {
@@ -1132,7 +1128,7 @@ body.dark-theme .moreworks-empty svg {
     .about-float-card { right: 10px; bottom: -10px; }
     .gallery-grid { grid-template-columns: 1fr 1fr; }
     .gallery-item-wide { grid-column: span 2; }
-    .reviews-grid { grid-template-columns: 1fr; }  /* на мобильных 1 колонка */
+    .reviews-grid { grid-template-columns: 1fr; }
     .contact-grid { grid-template-columns: 1fr; }
     .stats { grid-template-columns: repeat(2, 1fr); }
     .footer-inner { flex-direction: column; text-align: center; }
