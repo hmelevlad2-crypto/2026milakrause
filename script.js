@@ -272,7 +272,7 @@ function renderReviews() {
 
     grid.innerHTML = '';
 
-    const imageNames = ['rev1', 'rev2', 'rev3', 'rev4'];   // ← добавили rev4
+    const imageNames = ['rev1', 'rev2', 'rev3', 'rev4', 'rev5', 'rev6'];
 
     imageNames.forEach((name, index) => {
         const card = document.createElement('div');
